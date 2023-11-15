@@ -1,3 +1,43 @@
-node_modules
+# See http:/help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+task-management-frontend/dist
+task-management-frontend/tmp
+task-management-frontend/out-tsc
+task-management-frontend/bazel-out
+task-management-frontend/# Node
+task-management-frontend/node_modules
+task-management-frontend/npm-debug.log
+task-management-frontend/yarn-error.log
+task-management-frontend/# IDEs and editors
+task-management-frontend/.idea/
+task-management-frontend/.project
+task-management-frontend/.classpath
+task-management-frontend/.c9/
+task-management-frontend/*.launch
+task-management-frontend/.settings/
+task-management-frontend/*.sublime-workspace
+task-management-frontend/# Visual Studio Code
+task-management-frontend/.vscode/*
+task-management-frontend/!.vscode/settings.json
+task-management-frontend/!.vscode/tasks.json
+task-management-frontend/!.vscode/launch.json
+task-management-frontend/!.vscode/extensions.json
+task-management-frontend/.history/*
+task-management-frontend/# Miscellaneous
+task-management-frontend/.angular/cache
+task-management-frontend/.sass-cache/
+task-management-frontend/connect.lock
+task-management-frontend/coverage
+task-management-frontend/libpeerconnection.log
+task-management-frontend/testem.log
+task-management-frontend/typings
+task-management-frontend/# System files
+task-management-frontend/.DS_Store
+task-management-frontend/Thumbs.db
+
+
+task-management-backend/node_modules
 # Keep environment variables out of version control
-.env
+task-management-backend/.env
+

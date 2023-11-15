@@ -1,0 +1,33 @@
+<div class="main-container">
+    <div class="sub-header">
+        <div>
+          <h1>Task</h1>
+        </div>
+        <button type="button" mat-raised-button (click)="openDialog()" color="primary">
+            Create Task
+        </button>
+    </div>
+    <div class="filter-header">
+      <form [formGroup]="statusFilterForm">
+        <mat-checkbox formControlName="toDo">To-Do</mat-checkbox>
+        <mat-checkbox formControlName="inProgress">In Progress</mat-checkbox>
+        <mat-checkbox formControlName="done">Done</mat-checkbox>
+      </form>
+    </div>
+  <div class="card-container">
+  <ng-container *ngFor="let item of filteredTasks">
+    <mat-card class="tm-card" (click)="openDialog(item)">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ item?.title }}</mat-card-title>
+          <mat-icon aria-hidden="false" aria-label="status icon" [fontIcon]="getIcon(item?.statusId)"
+          [matTooltip]="StatusEnum[item.statusId]" (click)="$event.stopPropagation()"></mat-icon>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        {{ item.description }}
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  </div>
+</div>

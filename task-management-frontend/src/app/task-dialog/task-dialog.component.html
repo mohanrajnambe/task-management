@@ -1,0 +1,38 @@
+<div class="dialog-container" [formGroup]="taskForm">
+  <div class="delete-btn-container">
+    <h1 mat-dialog-title>
+      <ng-container *ngIf="data.task?.id; else createTaskTitle">
+        Update Task Status
+      </ng-container>
+      <ng-template #createTaskTitle> Create Task </ng-template>
+    </h1>
+    <button class="delete-btn" mat-raised-button *ngIf="data.task?.id" (click)="delete()" color="warn">Delete</button>
+  </div>
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput autocomplete="off" type="text" formControlName="title" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input
+        matInput
+        autocomplete="off"
+        type="text"
+        formControlName="description"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let status of getStatusValues()" [value]="status">{{
+          status
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="dialog-button-bar" mat-dialog-actions>
+      <button mat-raised-button (click)="onClose()">Close</button>
+      <button mat-raised-button cdkFocusInitial [disabled]="taskForm.invalid" (click)="onSubmit()" color="accent">Submit</button>
+  </div>
+</div>
